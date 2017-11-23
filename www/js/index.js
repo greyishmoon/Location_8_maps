@@ -8,9 +8,6 @@ var path = [];
 
 $(document).on( "pageinit", function() {
     
-    
-    watchID = navigator.geolocation.watchPosition(onLocationSuccess, onLocationFail)
-    
     // MAP - Create location LatLng's
     lochome = new google.maps.LatLng(52.215322, -2.347495);
     
@@ -19,6 +16,9 @@ $(document).on( "pageinit", function() {
         zoom: 12
     });
     
+    
+    watchID = navigator.geolocation.watchPosition(onLocationSuccess, onLocationFail);
+       
 });
 
 
