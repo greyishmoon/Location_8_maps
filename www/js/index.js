@@ -26,6 +26,10 @@ function onLocationSuccess(position) {
     
     loc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     
+    path.push(loc);
+    
+    map.setCenter(loc);
+    
      var mapPath = new google.maps.Polyline({
           path: path,
           geodesic: true,
