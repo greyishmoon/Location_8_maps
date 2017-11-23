@@ -11,20 +11,20 @@ $(document).on( "pageinit", function() {
     
     watchID = navigator.geolocation.watchPosition(onLocationSuccess, onLocationFail)
     
+    // MAP - Create location LatLng's
+    lochome = new google.maps.LatLng(52.215322, -2.347495);
+    
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: lochome,
+        zoom: 12
+    });
+    
 });
 
 
 function onLocationSuccess(position) {
     
     loc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-    
-    
-    path.push(loc);
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: loc,
-        zoom: 12
-    });
-    
     
      var mapPath = new google.maps.Polyline({
           path: path,
