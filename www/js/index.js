@@ -6,7 +6,7 @@ var path = [];
 
        
 
-$(document).on( "pageinit", "#pageone", function() {
+$(document).on( "pageinit", function() {
     
     
     watchID = navigator.geolocation.watchPosition(onLocationSuccess, onLocationFail)
@@ -18,7 +18,6 @@ function onLocationSuccess(position) {
     
     loc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     
-    position.coords.latitude, position.coords.longitude
     
     path.push(loc);
     map = new google.maps.Map(document.getElementById('map'), {
